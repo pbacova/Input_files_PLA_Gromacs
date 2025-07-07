@@ -1,0 +1,13 @@
+; Include forcefield parameters
+#include "PLAFF3.itp"
+
+; Include chain topologies
+#include "100LA.itp"
+
+[ system ]
+; Name
+PLA 100mers
+
+[ molecules ]
+; Compound        #mols
+100LA              70

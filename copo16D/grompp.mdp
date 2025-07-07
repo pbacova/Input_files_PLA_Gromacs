@@ -1,0 +1,42 @@
+title               =  PSPEO
+cpp                 =  /usr/bin/cpp
+integrator          =  md
+dt                  =  0.002   ; ps !
+nsteps              =  500000000 ; total 1000 ps.
+;cutoff-scheme = Verlet
+comm-mode           =  Linear
+nstcomm             =  10
+nstxout             =  100000   ;1000/1000 ps
+nstvout             =  0
+nstfout             =  0
+nstlog              =  100000
+nstenergy           =  100000
+nstlist             =  10
+ns_type             =  grid
+coulombtype         =  PME
+ewald_rtol          =  0.0001
+fourierspacing      =  0.12
+pme-order           =  4
+rlist               =  1.0
+rcoulomb            =  1.0
+rvdw                =  1.0
+; Berendsen temperature coupling is on in two groups
+Tcoupl              =  nose-hoover
+tc-grps             =  system
+tau_t               =  2.5 
+ref_t               =  500
+; Energy monitoring
+DispCorr            =  EnerPres
+Pcoupl              =  Parrinello-Rahman
+tau_p               =  5.0
+Pcoupltype          =  isotropic
+compressibility     =  4e-5
+ref_p               =  1.01325
+; Generate velocites is off at 300 K.
+gen_vel             =  no
+gen_temp            =  500
+gen_seed            =  3600
+constraints         =  all-bonds
+constraint_algorithm = LINCS
+pbc = xyz ;no
+periodic_molecules    = no
